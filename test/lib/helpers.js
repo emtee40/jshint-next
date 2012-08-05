@@ -18,7 +18,7 @@ Fixtures.prototype.get = function (name) {
 	var dir, stream;
 
 	dir = path.basename(this.filename).replace(".js", "");
-	stream = fs.readFileSync(path.join(this.dirname, "..", "fixtures", dir, name));
+	stream = fs.readFileSync(path.resolve(this.dirname, "..", "fixtures", dir, name));
 
 	return stream.toString().replace(/\r\n/g, "\n");
 };
